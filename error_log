@@ -1,0 +1,13 @@
+[14-Oct-2020 04:55:07 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[16-Oct-2020 02:39:20 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[16-Oct-2020 06:10:55 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[16-Oct-2020 18:51:32 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[18-Oct-2020 13:27:58 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[28-Oct-2020 13:10:34 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[28-Oct-2020 13:10:34 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[28-Oct-2020 13:10:34 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[28-Oct-2020 13:10:35 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[28-Oct-2020 13:10:35 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[28-Oct-2020 19:57:05 UTC] PHP Warning:  mail() has been disabled for security reasons in /home/segundo/public_html/envia.php on line 31
+[28-Oct-2020 20:06:19 UTC] PHP Warning:  fread(): Length parameter must be greater than 0 in /home/segundo/public_html/envia.php on line 26
+[28-Oct-2020 20:06:19 UTC] PHP Deprecated:  preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead in /home/segundo/public_html/novo/class.phpmailer.php on line 1862

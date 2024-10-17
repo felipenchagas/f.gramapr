@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /.smileys/
+Disallow: send-mail.php
+Disallow: .htacces
+Sitemap: http://www.gramasinteticapr.com.br/sitemap.xml
