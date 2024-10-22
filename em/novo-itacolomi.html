@@ -19,27 +19,86 @@
 <link href="https://www.gramasinteticapr.com.br/css/bromoPanel.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="https://www.gramasinteticapr.com.br/css/blueBoxed.css" title="blueBoxed" media="screen" />
  <!-- Javascript -->
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.prettyPhoto.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.cycle.all.min.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.tipsy.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/custom.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/animatedcollapse.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/input.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/nivoslider.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/slide.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/slides.min.jquery.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.jtweetsanywhere-1.3.1.min.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.preloader.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.eislideshow.js"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+<script type="text/javascript" src="../js/animatedcollapse.js"></script>
+<script type="text/javascript" src="../js/input.js"></script>
+<script type="text/javascript" src="../js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="../js/nivoslider.js"></script>
+<script type="text/javascript" src="../js/slide.js"></script>
+<script type="text/javascript" src="../js/slides.min.jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.jtweetsanywhere-1.3.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.preloader.js"></script>
+<script type="text/javascript" src="../js/jquery.eislideshow.js"></script>
 
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/jquery.ui.totop.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/styleswitch.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/cookies.js"></script>
-<script type="text/javascript" src="https://www.gramasinteticapr.com.br/js/cssLoader.js"></script>
-</head>
+<script type="text/javascript" src="../js/jquery.ui.totop.js"></script>
+<script type="text/javascript" src="../js/styleswitch.js"></script>
+<script type="text/javascript" src="../js/cookies.js"></script>
+<script type="text/javascript" src="../js/cssLoader.js"></script>
+<link rel="stylesheet" href="../stylescontato.css"></head>
+<div class="floating-button">
+  <button id="openModalBtn">Solicitar Orçamento</button>
+</div>
+
+
+<!-- Modal -->
+  <div id="contactModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Solicitar Orçamento</h2>
+        
+        <form action="processa_formulario-2-db.php" method="post" id="contact-form">
+          <div class="input-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+          </div>
+          
+          <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="telefone">Telefone</label>
+            <div class="phone-fields">
+              <input type="text" id="ddd" name="ddd" placeholder="DDD" maxlength="2" required pattern="\d{2}" title="Somente números são permitidos">
+              <input type="text" id="telefone" name="telefone" placeholder="Número" maxlength="9" pattern="\d{9}" title="Somente números são permitidos" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group cidade">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+            </div>
+            <div class="input-group estado">
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" name="estado" placeholder="Digite" maxlength="2" pattern="[A-Za-z]{2}" title="Apenas 2 letras são permitidas" required>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="descricao">Descrição do Orçamento</label>
+            <textarea id="descricao" name="descricao" placeholder="Descreva o serviço ou estrutura metálica que deseja orçar" required></textarea>
+          </div>
+          
+          <!-- Campo Honeypot escondido -->
+          <div style="display:none;">
+            <label for="honeypot">Não preencha este campo se for humano:</label>
+            <input type="text" id="honeypot" name="honeypot">
+          </div>
+          
+          <!-- Campo Oculto para o Temporizador -->
+          <input type="hidden" id="form_loaded_at" name="form_loaded_at" value="">
+          
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
 <body>
 
 <div class="wrap">
@@ -60,7 +119,7 @@
 <li class="active"><a href="https://www.gramasinteticapr.com.br/empresa">Empresa<span>Nossa empresa</span></a></li>
 <li><a href="https://www.gramasinteticapr.com.br/galeria">Galeria<span>algumas fotos</span></a></li>
 <li><a href="https://www.gramasinteticapr.com.br/contato">Contato<span>Solicite um or&ccedil;amento</span></a></li>                    </ul></div><!-- end main menu --><!-- start logo -->
-<div class="logo"><a href="https://www.gramasinteticapr.com.br/"><img  id="logo" src="https://www.gramasinteticapr.com.br/images/logo.png" title="Grama PR" alt="Grama Sintetica PR logo"></a></div><!-- end logo --></div><!-- end main menu wrap --></div><!-- end menu wrap -->
+<div class="logo"><a href="https://www.gramasinteticapr.com.br/"><img  id="logo" src="../images/logo.png" title="Grama PR" alt="Grama Sintetica PR logo"></a></div><!-- end logo --></div><!-- end main menu wrap --></div><!-- end menu wrap -->
 <div id="search-wrap">
 <div class="call">
                 Contato: <br />
@@ -81,7 +140,7 @@
 </p>
 <p class="text">&nbsp;  Nosso material tem um eficiente sistema de absorção de impactos, nem todas as gramas seguem este padrão exigido pela Fifa e outros orgãos do esporte. Além disso a nossa <strong>grama sintética</strong> proporciona ótima capacidade de drenagem com absorção rápida, para que não ocorra formação de poças de água. Até mesmo em casos de fortes tormentas é possível jogar logo após, sem a necessidade de cancelar seus jogos, sem prejuizo para o empreendedor.
 </p></div>
-<div class="outerOneThird last"><span class="imageWrap"><img src="https://www.gramasinteticapr.com.br/images/cidade1.jpg" alt="Grama artificial" /></span><span class="shadowHolder"><img src="https://www.gramasinteticapr.com.br/images/big-shadow5.png" alt="Grama artificial" /></span></div>
+<div class="outerOneThird last"><span class="imageWrap"><img src="../images/cidade1.jpg" alt="Grama artificial" /></span><span class="shadowHolder"><img src="../images/big-shadow5.png" alt="Grama artificial" /></span></div>
 <div class="dash-line"></div>
 <div class="outerOneThird">
 <h3>Diferencial</h3>
@@ -105,13 +164,13 @@
 <h5>Gramado Sintético</h5>
 <div class="sep_line"></div></div>
 <div class="clear20"></div>
-<div class="outerOneThird"><span class="imageWrap"><a href="https://www.gramasinteticapr.com.br/images/cidade3.jpg" data-rel="prettyPhoto"><img src="https://www.gramasinteticapr.com.br/images/cidade3.jpg" alt="Grama Sintética  " /><span><span></span></span></a>           </span><span class="shadowHolder"><img src="https://www.gramasinteticapr.com.br/images/small-shadow.png" alt="Grama Sintética  " /></span>
+<div class="outerOneThird"><span class="imageWrap"><a href="https://www.gramasinteticapr.com.br/images/cidade3.jpg" data-rel="prettyPhoto"><img src="../images/cidade3.jpg" alt="Grama Sintética  " /><span><span></span></span></a>           </span><span class="shadowHolder"><img src="../images/small-shadow.png" alt="Grama Sintética  " /></span>
 <h3><a href="https://www.gramasinteticapr.com.br">Grama sintética para futebol</a></h3><br />
 </div>
-<div class="outerOneThird"><span class="imageWrap"><a href="https://www.gramasinteticapr.com.br/images/cidade5.jpg" data-rel="prettyPhoto"><img src="https://www.gramasinteticapr.com.br/images/cidade5.jpg" alt="Grama Sintética  " /><span><span></span></span></a>           </span><span class="shadowHolder"><img src="https://www.gramasinteticapr.com.br/images/small-shadow.png" alt="Grama Sintética  " /></span>
+<div class="outerOneThird"><span class="imageWrap"><a href="https://www.gramasinteticapr.com.br/images/cidade5.jpg" data-rel="prettyPhoto"><img src="../images/cidade5.jpg" alt="Grama Sintética  " /><span><span></span></span></a>           </span><span class="shadowHolder"><img src="../images/small-shadow.png" alt="Grama Sintética  " /></span>
 <h3><a href="https://www.gramasinteticapr.com.br">Campo de futebol Society</a></h3><br />
 </div>
-<div class="outerOneThird last"><span class="imageWrap"><a href="https://www.gramasinteticapr.com.br/images/cidade4.jpg" data-rel="prettyPhoto"><img src="https://www.gramasinteticapr.com.br/images/cidade4.jpg" alt="Grama Sintética  " /><span><span></span></span></a>           </span><span class="shadowHolder"><img src="https://www.gramasinteticapr.com.br/images/small-shadow.png" alt="Grama Sintética  " /></span>
+<div class="outerOneThird last"><span class="imageWrap"><a href="https://www.gramasinteticapr.com.br/images/cidade4.jpg" data-rel="prettyPhoto"><img src="../images/cidade4.jpg" alt="Grama Sintética  " /><span><span></span></span></a>           </span><span class="shadowHolder"><img src="../images/small-shadow.png" alt="Grama Sintética  " /></span>
 <h3>Grama decorativa</h3><br /><div class="sep_line"></div></div>
 <div class="clear20"></div>
 <div class="outerTwoThirds">
@@ -122,7 +181,7 @@
 <p class="text">&nbsp;  Que é uma coisa boa, dadas ás muitas vantagens da <b>grama sintética</b>. Aproveite essas vantagens em <a href="https://www.gramasinteticapr.com.br/"><b>Novo Itacolomi</b></a>.
 
 </p></div>
-<div class="outerOneThird last"><span class="imageWrap"><img src="https://www.gramasinteticapr.com.br/images/cidade2.jpg" alt="Grama artificial" /></span><span class="shadowHolder"><img src="https://www.gramasinteticapr.com.br/images/big-shadow5.png" alt="Grama artificial" /></span></div>
+<div class="outerOneThird last"><span class="imageWrap"><img src="../images/cidade2.jpg" alt="Grama artificial" /></span><span class="shadowHolder"><img src="../images/big-shadow5.png" alt="Grama artificial" /></span></div>
 
 </div>
 <div class="clear20"></div>
@@ -201,9 +260,9 @@
 <p class="fr"><a href="https://www.gramasinteticapr.com.br/grama-sintetica-pr">PR</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-mg">MG</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-rj">RJ</a> <a href="https://www.gramasinteticapr.com.br/grama-sintetica-rs">RS </a> <a href="https://www.gramasinteticapr.com.br/grama-sintetica-sc">SC</a> <a href="https://www.gramasinteticapr.com.br/grama-sintetica-sp">SP</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-ms">MS</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-es">ES</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-mg">MG</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-rj">RJ</a> <a href="https://www.gramasinteticapr.com.br/grama-sintetica-rs">RS </a> <a href="https://www.gramasinteticapr.com.br/grama-sintetica-sc">SC</a> <a href="https://www.gramasinteticapr.com.br/grama-sintetica-sp">SP</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-mt">MT</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-es">ES</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-go">GO</a><a href="https://www.gramasinteticapr.com.br/grama-sintetica-df">DF</a></p></div></div><!-- end post footer --></div><!-- end footer -->
 <div class="clear"></div>
 <div id="footerShadow" class="boxed">
-<div class="shadowHolderflat"><img src="https://www.gramasinteticapr.com.br/images/big-shadow.png" alt="Grama Sintética  " /></div></div>
+<div class="shadowHolderflat"><img src="../images/big-shadow.png" alt="Grama Sintética  " /></div></div>
 <!--Start of Tawk.to Script-->
 
 <!--End of Tawk.to Script-->
-</body>
+<script src="../scriptcontato.js"></script></body>
 </html>

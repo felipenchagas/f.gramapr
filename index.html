@@ -43,44 +43,75 @@
 <link href="css/bromoPanel.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/blueBoxed.css" title="blueBoxed" media="screen" />
 <!-- Javascript -->
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.tipsy.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="js/animatedcollapse.js"></script>
-<script type="text/javascript" src="js/input.js"></script>
-<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript" src="js/nivoslider.js"></script>
-<script type="text/javascript" src="js/slide.js"></script>
-<script type="text/javascript" src="js/slides.min.jquery.js"></script>
-<script type="text/javascript" src="js/jquery.jtweetsanywhere-1.3.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.preloader.js"></script>
-<script type="text/javascript" src="js/jquery.eislideshow.js"></script>
-
-<script type="text/javascript" src="js/jquery.ui.totop.js"></script>
-<script type="text/javascript" src="js/styleswitch.js"></script>
-<script type="text/javascript" src="js/cookies.js"></script>
-<script type="text/javascript" src="js/cssLoader.js"></script>
 
 
-<script>
 
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-42890790-1', 'gramasinteticapr.com.br');
-  ga('send', 'pageview');
-
-</script>
+<link rel="stylesheet" href="stylescontato.css">
 </head>
+
 <body>
 <!-- Start Alexa Certify Javascript -->
 
+<div class="floating-button">
+  <button id="openModalBtn">Solicitar Orçamento</button>
+</div>
 
+
+<!-- Modal -->
+  <div id="contactModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Solicitar Orçamento</h2>
+        
+        <form action="processa_formulario-2-db.php" method="post" id="contact-form">
+          <div class="input-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+          </div>
+          
+          <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="telefone">Telefone</label>
+            <div class="phone-fields">
+              <input type="text" id="ddd" name="ddd" placeholder="DDD" maxlength="2" required pattern="\d{2}" title="Somente números são permitidos">
+              <input type="text" id="telefone" name="telefone" placeholder="Número" maxlength="9" pattern="\d{9}" title="Somente números são permitidos" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group cidade">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+            </div>
+            <div class="input-group estado">
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" name="estado" placeholder="Digite" maxlength="2" pattern="[A-Za-z]{2}" title="Apenas 2 letras são permitidas" required>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="descricao">Descrição do Orçamento</label>
+            <textarea id="descricao" name="descricao" placeholder="Descreva o serviço ou estrutura metálica que deseja orçar" required></textarea>
+          </div>
+          
+          <!-- Campo Honeypot escondido -->
+          <div style="display:none;">
+            <label for="honeypot">Não preencha este campo se for humano:</label>
+            <input type="text" id="honeypot" name="honeypot">
+          </div>
+          
+          <!-- Campo Oculto para o Temporizador -->
+          <input type="hidden" id="form_loaded_at" name="form_loaded_at" value="">
+          
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
 <!-- End Alexa Certify Javascript -->
 <!--<div id="switcher_btn"><img src="images/option.png" alt="Grama Sintética  " /></div>-->
 
@@ -117,9 +148,7 @@
 <h4>Grama Sintética Esportiva</h4>
 <p><span>Qualidade, beleza e confiança.</span></p></div><!-- end nivo slider --></div><!-- end slider -->
 <div class="sep_lines"></div><!-- separator line --><!-- start promo box -->
-<div class="promo-box">
-<p><a href="servicos"><strong>Grama sintética</strong></a>, Realturf, sua grama mais verde que a do vizinho.<br />
-REAL OU SINTÉTICO? será difícil dizer!</p>      </div><!-- end promo box -->
+<!-- end promo box -->
 <div class="clear20"></div><!-- start three columns-->
 <div class="outerOneThird">
 <h3>O que fazemos</h3>
@@ -268,5 +297,26 @@ cada objetivo requer diferentes técnicas.<a href="https://www.gramasinteticasc.
 <div class="clear"></div>
 <div id="footerShadow" class="boxed">
 <div class="shadowHolderflat"><img src="images/big-shadow.png" alt="Grama Sintética  " /></div></div>
+<script src="scriptcontato.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/animatedcollapse.js"></script>
+<script type="text/javascript" src="js/input.js"></script>
+<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="js/nivoslider.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="js/slides.min.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.jtweetsanywhere-1.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.preloader.js"></script>
+<script type="text/javascript" src="js/jquery.eislideshow.js"></script>
+
+<script type="text/javascript" src="js/jquery.ui.totop.js"></script>
+<script type="text/javascript" src="js/styleswitch.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/cssLoader.js"></script>
 </body>
 </html>
